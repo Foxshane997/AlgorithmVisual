@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sorting Algorithms Visualizer</title>
+    <link
+      rel="icon"
+      href="./assets/images/neural-16px-Becris-flaticon.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="/css/sorting.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="/assets/images/neural-24px-Becris-flaticon.png" alt="Logo" />
+        <span>Sorting Algorithms Visualizer</span>
+      </div>
+      <div class="navbar-buttons">
+        <a href="/">
+          <button class="btn"><i class="fas fa-home"></i> Home</button>
+        </a>
+        <a
+          href="https://www.geeksforgeeks.org/sorting-algorithms/"
+          target="_blank"
+        >
+          <button class="btn"><i class="fas fa-random"></i> Learn More</button>
+        </a>
+      </div>
+    </nav>
+
+    <div id="controls-container">
+      <div id="left-controls">
+        <select id="algorithm" onchange="setDescription()">
+          <optgroup label="Sort Algorithms">
+            <option value="bubbleSort">Bubble Sort</option>
+            <option value="insertionSort">Insertion Sort</option>
+            <option value="mergeSort">Merge Sort</option>
+            <option value="quickSort">Quick Sort</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <div id="right-controls">
+        <button id="generate-array-btn" onclick="generateArray()">
+          <i class="fas fa-random"></i> Generate Array
+        </button>
+        <button id="start-btn" onclick="startSort()">
+          <i class="fas fa-play"></i> Start
+        </button>
+      </div>
+    </div>
+
+    <div id="time-taken">Time Taken: 0 seconds</div>
+
+    <div id="array-container"></div>
+
+    <div id="algorithm-description-container">
+      <p>Select an algorithm to see its description here.</p>
+    </div>
+
+    <script src="/js/sorting.js"></script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Algorithms</title>
+    <link rel="stylesheet" href="css/search.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="/assets/images/neural-24px-Becris-flaticon.png" alt="Logo" />
+        <span>Search Algorithms Visualizer</span>
+      </div>
+      <div class="navbar-buttons">
+        <a href="/">
+          <button class="btn"><i class="fas fa-home"></i> Home</button>
+        </a>
+        <a
+          href="https://www.geeksforgeeks.org/searching-algorithms/"
+          target="_blank"
+        >
+          <button class="btn"><i class="fas fa-search"></i> Learn More</button>
+        </a>
+      </div>
+    </nav>
+
+    <div id="controls-container">
+      <div id="left-controls">
+        <label for="algorithm">Choose a search algorithm:</label>
+        <select id="algorithm" onchange="setSearchAlgorithm()">
+          <option value="linearSearch">Linear Search</option>
+          <option value="binarySearch">Binary Search</option>
+          <option value="jumpSearch">Jump Search</option>
+          <option value="exponentialSearch">Exponential Search</option>
+        </select>
+      </div>
+    </div>
+    <div id="search-container">
+      <input
+        type="number"
+        id="search-input"
+        placeholder="Enter a number to search"
+      />
+      <button id="start-btn" onclick="handleSearchInput()">Search</button>
+    </div>
+
+    <div id="array-display"></div>
+    <div id="searchable-numbers"></div>
+
+    <div id="search-result"></div>
+    <div id="result"></div>
+
+    <div id="algorithm-description-container">
+      <p id="algorithm-description">
+        This is where the description will appear.
+      </p>
+    </div>
+
+    <script src="/js/search.js"></script>
+  </body>
+</html>
