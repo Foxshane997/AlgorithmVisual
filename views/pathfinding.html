@@ -14,7 +14,7 @@
   <nav class="navbar">
     <div class="logo">
       <img src="/assets/images/neural-24px-Becris-flaticon.png" alt="Logo" />
-      <span>Sorting Algorithms Visualizer</span>
+      <span>Pathfinding Algorithms Visualizer</span>
     </div>
     <div class="navbar-buttons">
       <a href="/">
@@ -29,18 +29,73 @@
     </div>
   </nav>
 
-  <!-- Buttons -->
   <div id="controls" style="margin: 20px;">
     <button id="reset-btn" class="btn">Reset Grid</button>
     <button id="visualize-btn" class="btn">Visualize Pathfinding</button>
+    <label for="algorithm-select">Select Algorithm:</label>
+    <select id="algorithm-select" onchange="updateAlgorithmDescription()">
+      <option value="bfs">Breadth-First Search (BFS)</option>
+      <option value="a-star">A*</option>
+      <option value="dijkstra">Dijkstra's Algorithm</option>
+    </select>
   </div>
 
-  <!-- Main Container for the Grid -->
   <div id="grid-container">
-    <!-- The grid will be dynamically generated using JavaScript -->
   </div>
 
-  <!-- Link to JavaScript -->
+  <div id="algorithm-description" style="margin-top: 20px;">
+    <h3>Algorithm Description</h3>
+    <p id="bfs-description" class="algorithm-description" style="display: block;">
+      <strong>Breadth-First Search (BFS)</strong> explores all the nodes at the present depth level before moving on to nodes at the next depth level.
+      <br><br>
+      <strong>Use Cases:</strong>
+      <ul>
+        <li>Finding the shortest path in unweighted grids.</li>
+        <li>Exploring all nodes at a particular distance from the start.</li>
+        <li>Ideal for finding the shortest path in a maze without considering any weights or costs.</li>
+      </ul>
+    </p>
+    <p id="a-star-description" class="algorithm-description" style="display: none;">
+      <strong>A* Algorithm</strong> is a pathfinding and graph traversal algorithm that finds the shortest path from a start node to a target node using heuristics.
+      <br><br>
+      <strong>Use Cases:</strong>
+      <ul>
+        <li>Finding the most efficient route in a weighted grid.</li>
+        <li>Pathfinding in games and applications like GPS navigation systems.</li>
+        <li>Use in scenarios requiring a balance of cost and distance to reach a goal.</li>
+      </ul>
+    </p>
+    <p id="dijkstra-description" class="algorithm-description" style="display: none;">
+      <strong>Dijkstra's Algorithm</strong> finds the shortest path between nodes in a graph, ensuring that the path with the lowest cumulative distance is chosen.
+      <br><br>
+      <strong>Use Cases:</strong>
+      <ul>
+        <li>Optimal pathfinding in weighted graphs where all edges have non-negative weights.</li>
+        <li>Network routing protocols to find the shortest path.</li>
+        <li>Used in applications such as mapping software and logistics for shortest travel distances.</li>
+      </ul>
+    </p>
+  </div>
+
   <script src="/js/pathfinding.js"></script>
+
+  <script>
+    function updateAlgorithmDescription() {
+      const algorithmSelect = document.getElementById("algorithm-select");
+      const selectedAlgorithm = algorithmSelect.value;
+
+      const descriptions = document.querySelectorAll(".algorithm-description");
+      descriptions.forEach(description => {
+        description.style.display = "none";
+      });
+
+      const selectedDescription = document.getElementById(`${selectedAlgorithm}-description`);
+      if (selectedDescription) {
+        selectedDescription.style.display = "block";
+      }
+    }
+
+    window.onload = updateAlgorithmDescription;
+  </script>
 </body>
 </html>
