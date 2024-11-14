@@ -33,6 +33,15 @@ app.get("/search", (req, res) => {
   });
 });
 
+app.get("/pathfinding", (req, res) => {
+  const filePath = path.join(__dirname, "views", "pathfinding.html");
+  res.sendFile(filePath, (err) => {
+    if (err) {
+      res.status(500).send("Server error occurred.");
+    }
+  });
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);

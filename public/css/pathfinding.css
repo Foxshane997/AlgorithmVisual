@@ -1,0 +1,80 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f4f4f9;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+  }
+  
+  .navbar-buttons button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #grid-container {
+    display: grid;
+    grid-template-columns: repeat(20, 25px); /* 20 columns */
+    grid-template-rows: repeat(20, 25px); /* 20 rows */
+    gap: 2px;
+    margin: 20px auto;
+  }
+  
+  .grid-cell {
+    width: 25px;
+    height: 25px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+  }
+  
+  .grid-cell.start {
+    background-color: #4caf50;
+  }
+  
+  .grid-cell.end {
+    background-color: #f44336;
+  }
+  
+  .grid-cell.obstacle {
+    background-color: #333;
+  }
+  
+  .grid-cell.visited {
+    background-color: #2196f3;
+  }
+  
+  .grid-cell.path {
+    background-color: #ffeb3b;
+  }
+  
+  #controls .btn {
+    margin: 5px;
+    padding: 10px 15px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #controls .btn:hover {
+    background-color: #45a049;
+  }
+  
